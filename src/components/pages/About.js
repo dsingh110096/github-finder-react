@@ -5,6 +5,9 @@ const About = () => {
     <Fragment>
       <h1>About This App</h1>
       <p>App to Search Github Users</p>
+      <p>
+        Based on : <strong>React, ReactDom, Router, Context Api, Node.js</strong>{' '}
+      </p>
       <p>Version 1.0.0</p>
       <h3>Developer Info:</h3>
       <div className='card grid-2'>

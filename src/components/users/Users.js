@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import UserItem from './UserItem';
 import Spinner from '../layout/Spinner';
-import PropTypes from 'prop-types';
+import GithubContext from '../../context/github/githubContext';
+import AlertContext from '../../context/alert/alertContext';
 
-const Users = ({ users, loading }) => {
+const Users = () => {
+  const githubContext = useContext(GithubContext);
+  const alertContext = useContext(AlertContext);
+  const { loading, users } = githubContext;
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  //using isMounted state disable useEffect for first time run(important)
+  useEffect(() => {
+    if (githubContext.users.length === 0 && !loading && isMounted) {
+      alertContext.showAlert('User Not Found', 'danger');
+    }
+    setIsMounted(true);
+    //eslint-disable-next-line
+  }, [loading]);
+
   if (loading) {
     return <Spinner />;
   } else {
@@ -20,11 +36,6 @@ const userStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(200px,1fr))',
   gridGap: '1rem',
-};
-
-Users.propTypes = {
-  users: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
 };
 
 export default Users;
