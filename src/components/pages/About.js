@@ -30,21 +30,39 @@ const About = () => {
           <ul>
             <li>
               <i className='fab fa-github' />{' '}
-              <a href='https://github.com/dsingh110096'>dsingh110096</a>
+              <a href='https://github.com/dsingh110096' target='_blank' rel='noopener noreferrer'>
+                dsingh110096
+              </a>
             </li>
             <li>
               <i className='fab fa-linkedin-in' />{' '}
-              <a href='https://www.linkedin.com/in/dheerendra-singh-7210b0128/'>
+              <a
+                href='https://www.linkedin.com/in/dheerendra-singh-7210b0128/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 dheerendra-singh-7210b0128
               </a>
             </li>
             <li>
               <i className='fab fa-facebook' />{' '}
-              <a href='https://www.facebook.com/theGodOfCourage'>theGodOfCourage</a>
+              <a
+                href='https://www.facebook.com/theGodOfCourage'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                theGodOfCourage
+              </a>
             </li>
             <li>
               <i className='fab fa-instagram' />{' '}
-              <a href='https://www.instagram.com/dheerendra3036/'>dheerendra3036</a>
+              <a
+                href='https://www.instagram.com/dheerendra3036/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                dheerendra3036
+              </a>
             </li>
           </ul>
         </div>

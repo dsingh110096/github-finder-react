@@ -34,15 +34,9 @@ const User = ({ match }) => {
   if (loading) return <Spinner />;
   return (
     <Fragment>
-      <Link to='/' className='btn btn-light'>
+      <Link to='/' className='btn btn-light' style={{ height: '40px' }}>
         Back To Search
       </Link>
-      Hireable:{' '}
-      {hireable ? (
-        <i className='fas fa-check text-success' />
-      ) : (
-        <i className='fas fa-times-circle text-danger' />
-      )}
       <div className='card grid-2'>
         <div className='all-center'>
           <img src={avatar_url} alt={name} className='round-img' style={{ width: '150px' }} />
@@ -86,8 +80,21 @@ const User = ({ match }) => {
                 </Fragment>
               )}
             </li>
+            <li>
+              <strong>Hireable:</strong>{' '}
+              {hireable ? (
+                <i className='fas fa-check text-success' />
+              ) : (
+                <i className='fas fa-times-circle text-danger' />
+              )}
+            </li>
           </ul>
-          <a href={html_url} className='btn btn-dark my-1'>
+          <a
+            href={html_url}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='btn btn-dark my-1'
+          >
             Vist Github Profile
           </a>
         </div>
